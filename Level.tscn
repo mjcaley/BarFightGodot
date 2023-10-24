@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8uibrrapym5p"]
+
+[ext_resource type="PackedScene" uid="uid://drvkibxmhotcg" path="res://Fighter.tscn" id="1_njc0g"]
+[ext_resource type="Script" path="res://Fighter.cs" id="2_u3wg1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opqd2"]
+size = Vector2(61, 62)
+
+[sub_resource type="Gradient" id="Gradient_c1srh"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t3wnl"]
+gradient = SubResource("Gradient_c1srh")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Fighter" parent="." instance=ExtResource("1_njc0g")]
+position = Vector2(633, 353)
+script = ExtResource("2_u3wg1")
+
+[node name="Punching Bag" type="Node2D" parent="."]
+position = Vector2(828, 292)
+
+[node name="Area2D" type="Area2D" parent="Punching Bag"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Punching Bag/Area2D"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_opqd2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Punching Bag"]
+texture = SubResource("GradientTexture2D_t3wnl")
