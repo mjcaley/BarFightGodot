@@ -5,4 +5,6 @@ public enum FighterState {
     Punching,
     Walking,
     Running,
+    Hit,
+    Stunned,
 }
